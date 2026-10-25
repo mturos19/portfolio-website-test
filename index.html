@@ -10,7 +10,7 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Mark Turos">
-<meta property="og:description" content="Software engineer. I build software that makes hard problems feel simple. PalBoard, Somni and one more on the way.">
+<meta property="og:description" content="Software engineer. PalBoard, Somni and one more on the way.">
 <meta property="og:image" content="https://mturos19.github.io/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,8 +60,8 @@
         <span class="live"><i></i>Software engineer</span>
         <span>Rugby, UK</span>
       </p>
-      <h1 class="display">I build software that makes hard problems feel simple.<span class="caret" aria-hidden="true"></span></h1>
-      <p class="lede">I ship complete products: a dashboard that decodes a game's undocumented save files right in the browser, and a bedtime-story app that reads aloud in a parent's own voice. Day to day I engineer marketplace integrations at Pertemba, keeping 2M+ products in sync across 160+ sales channels.</p>
+      <h1 class="display">Hi, I'm Mark.<br>I write software, some of it ships.<span class="caret" aria-hidden="true"></span></h1>
+      <p class="lede">I'm a software engineer with a background in computer science and data science. My day job is in e-commerce integrations, working with APIs, data pipelines and automation. In my spare time I design, build and ship my own products, from the first idea through to launch.</p>
       <div class="hero__cta">
         <a class="btn btn--primary" href="#work">See the work</a>
         <button class="btn" type="button" data-open-explorer="PalBoard">Browse the source</button>
@@ -95,7 +95,7 @@
       <div><dt>a year flows through the marketplace ecosystem I integrate</dt><dd>£36M</dd></div>
       <div><dt>SKUs kept in sync across channels</dt><dd>2M+</dd></div>
       <div><dt>marketplace channels connected</dt><dd>160+</dd></div>
-      <div><dt>weekly revenue from integrations I've shipped</dt><dd>£10K+</dd></div>
+      <div><dt>weekly revenue from integrations I've shipped</dt><dd>£40K+</dd></div>
     </dl>
   </section>
 
@@ -289,7 +289,7 @@
   <section class="section wrap" id="experience" aria-labelledby="xp-title">
     <header class="section__head">
       <p class="label">Experience <span class="label__aside">git log --career</span></p>
-      <h2 id="xp-title">From the support desk to 160+ marketplace channels.</h2>
+      <h2 id="xp-title">Where I've worked so far.</h2>
     </header>
     <div class="xp">
       <ol class="log">
@@ -299,7 +299,7 @@
             <p class="log__meta"><span class="ref">HEAD</span><span class="ref ref--muted">promoted</span><time>Sep 2026 – now</time></p>
             <h3 class="log__role">Technical Marketplace Integrations Specialist <span class="log__org">Pertemba</span></h3>
             <ul>
-              <li>Drive end-to-end implementation of marketplace integrations generating £10K+ in weekly revenue, connecting platforms, channels and brand partners.</li>
+              <li>Drive end-to-end implementation of marketplace integrations generating £40K+ in weekly revenue, connecting platforms, channels and brand partners.</li>
               <li>Write Python and pandas automation to transform, validate and analyse large product datasets, replacing manual processing.</li>
               <li>Engineer product data pipelines and marketplace feeds, fixing the mapping and transformation issues that hurt listing quality.</li>
               <li>Trace cross-platform failures through APIs, data flows and feed logic, and ship fixes with internal teams and external vendors.</li>
@@ -379,16 +379,25 @@
     </div>
   </section>
 
-  <section class="section wrap" id="research" aria-labelledby="research-title" data-title="Research · PPO asset allocator" data-uses="Python,Reinforcement learning">
+  <section class="section wrap" id="research" aria-labelledby="research-title" data-title="Research · PPO asset allocator" data-uses="Python,pandas,Reinforcement learning">
     <div class="research">
       <header class="section__head section__head--flush">
         <p class="label">Research</p>
         <h2 id="research-title">An agent that allocates a portfolio with the downside in mind.</h2>
-        <p class="section__sub">I trained a Proximal Policy Optimisation agent to set portfolio weights across stocks, ETFs and crypto, with Conditional Value at Risk built into the objective rather than raw return alone. The backtest rebalances monthly over 2010 to 2023 market data.</p>
+        <p class="section__sub">I built a custom Gymnasium market environment and trained a Proximal Policy Optimisation agent to set portfolio weights across stocks, ETFs, commodities, REITs and crypto. It's rewarded for return, penalised for tail risk and charged for every trade, then backtested with monthly rebalancing over 2010 to 2023.</p>
         <p class="section__sub">It finished at 10.6× its starting value against the S&amp;P 500's 3.2×, with lower volatility and lower CVaR than the benchmark.</p>
-        <ul class="chips" aria-label="Method">
-          <li>PPO</li><li>CVaR objective</li><li>Monthly rebalancing</li><li>2010–2023 backtest</li><li>Stocks · ETFs · crypto</li>
+        <ul class="facts">
+          <li><b>15 assets</b><span>in six groups: US tech, SPY and QQQ, gold, oil and silver, three REIT funds, and Bitcoin, Ether and Litecoin.</span></li>
+          <li><b>365 × 125</b><span>is what the agent sees each step: a year of five FRED macro series plus eight technical indicators per asset.</span></li>
+          <li><b>r − ½·CVaR</b><span>The reward subtracts half the 5% Conditional Value at Risk, so a strategy that wins most months but blows up in a crash scores badly.</span></li>
+          <li><b>turnover²</b><span>Trading costs grow with the square of turnover to model market impact, which teaches the agent to rebalance gradually instead of churning.</span></li>
         </ul>
+        <ul class="chips" aria-label="Method">
+          <li>PyTorch</li><li>Stable-Baselines3</li><li>Gymnasium</li><li>256×256 actor-critic</li><li>4 parallel envs</li><li>FRED · Yahoo · Alpha Vantage</li>
+        </ul>
+        <div class="project__actions">
+          <a class="btn btn--quiet" href="https://github.com/mturos19/assetalloc" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a>
+        </div>
       </header>
       <figure class="bars" id="bars">
         <figcaption>

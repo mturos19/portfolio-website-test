@@ -395,7 +395,10 @@ a.browser__url:hover { border-color: var(--line-strong); color: var(--fg-2); }
 /* ---------- research ---------- */
 .research { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(32px, 5vw, 80px); align-items: center; }
 .research .section__head { gap: 16px; }
+.research { --accent: var(--signal); }
 .research .chips { margin-top: 6px; }
+.research .facts { margin: 6px 0 0; }
+.research .project__actions { margin-top: 4px; }
 .bars { min-width: 0; margin: 0; padding: clamp(18px, 3vw, 28px); background: var(--panel); border: 1px solid var(--line); border-radius: 12px; }
 .bars figcaption { display: grid; gap: 6px; }
 .bars__note { font-size: .8125rem; color: var(--fg-3); }
